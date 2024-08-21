@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="Styling\Main-styling.css">
+    <link rel="stylesheet" href="Styling\UserDash-styling.css">
+    <link rel="stylesheet" href="Styling\jquery_dataTable.css">
+    <meta charset="UTF-8">
+    <link rel="icon" sizes="32x32" href="Logos\3-Filled-no-background.png">
+    <title>InventiSync</title>
+</head>
+
+<main>
+    <body onload="get_logs()">
+        <header class="header">
+            <div class="logo">InventiSync</div>
+            <div class="company-name" id="companyName"></div>
+            <nav>
+                <ul class="nav-links">
+                    <li>
+                        <div class="profile-button" onclick="toggleProfileMenu()">Your Profile</div>
+                        <div class="profile-menu" id="profileMenu">
+                            <ul>
+                                <li><a href="https://inventisync.net/change_password">Change Password</a></li>
+                                <li><a href="#" onclick="getUserSettings()">Settings</a></li>
+                                <li><a href="https://inventisync.net/">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="https://inventisync.net/contact" class="contact-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="buttons">
+                <nav>
+                    <button class="generic-button" id="Inventory" onclick="user_dashboard()">Inventory</button>
+                    <button class="generic-button" id="Export"onclick="toggleExportForm()">Export</button></a> 
+                </nav>
+            </div>
+            <div id="response-container" class="response-container"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <div id="output"></div>
+                                <table class="table" id="Log_table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Product ID</th>
+                                            <th>Date Modified</th>
+                                            <th>Add Or Subtract</th>
+                                            <th>Amount Changed</th>
+                                            <th>Amount Type</th>
+                                            <th>Log ID</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="chart-container">
+                            <canvas id="barChart" width="100" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="chart-container">
+                            <canvas id="pieChart" width="100" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="import-container">
+            <div class="formPopup" id="exportForm">
+                <h2>Export Inventory</h2>
+                <button class="btn" onclick="exprtFile_logs()">Download File</button>
+                <button class ="btn" onclick="openExprt_email(); closeExprt()">Send File by Email</button>
+                <button class="btn cancel" onclick="closeExprt()">Close</button>
+                <p id="exprted-msg-success-down" style="display: none; color: green;">File Exported Successfully!</p>
+                <p id="exprted-msg-fail-down" style="display: none; color: rgb(243, 5, 5);">File Export Failed!</p>
+              </form>
+            </div>
+          </div>
+          <div class="import-container">
+            <div class="formPopup" id="exprt_email">
+                  <input type="text" id="user_email" name="filename" placeholder="JohnDoe123@domainhere">
+                  <button class="btn" id="sub_btn", onclick="exprtByEmail_logs()">Send</button>
+                  <button class="btn cancel" id="cancel_btn", onclick="closeExprt_email()">Close</button>
+                  <p id="exprted-msg-success-log" style="display: none; color: green;">File Exported Successfully!</p>
+                  <p id="exprted-msg-fail-log" style="display: none; color: rgb(243, 5, 5);">File Export Failed!</p>
+            </div>
+          </div>
+    </body>
+    <div class="popup" id="settingsPopup">
+        <h2>Settings</h2>
+        <label for="itemAmountThreshold">Item Amount Threshold:</label>
+        <input type="number" id="itemAmountThreshold" name="itemAmountThreshold" class="text-input" placeholder="Enter item amount threshold"  value="" required>
+        <label for="automaticNotifications">
+          <input type="checkbox" id="automaticNotifications" name="automaticNotifications">
+         Notifications
+        </label>
+        <button type="button" class="btn" onclick="updateUserSettings()">Save</button>
+        <button type="button" class="btn cancel" onclick="closeSettings()">Close</button>
+      
+        <p id="settings-update-success-msg" style="display: none; color: green;">Settings Updated Successfully!</p>
+        <p id="settings-update-fail-msg" style="display: none; color: rgb(243, 5, 5);">Settings Update Failed!</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/src/Main_js.js"></script>
+</main>
+</html>

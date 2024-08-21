@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Styling\Main-styling.css"> 
+    <link rel="stylesheet" href="Styling\UserDash-styling.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="Styling\jquery_dataTable.css">
+    <meta charset="UTF-8">
+    <link rel="icon" sizes="32x32" href="Logos\3-Filled-no-background.png">
+    <title>InventiSync</title>
+
+</head>
+<main> 
+<body onload= "get_data()">
+    <header class="header">
+      <div class="logo">
+        InventiSync
+      </div>
+      <div class="company-name" id="companyName">
+          <!-- User's company name will be inserted here dynamically -->
+      </div>
+      <nav>
+        <ul class="nav-links">
+            <li>
+                <div class="profile-button" onclick="toggleProfileMenu()">Your Profile</div>
+                <div class="profile-menu" id="profileMenu">
+                    <ul>
+                        <li><a href="https://inventisync.net/change_password">Change Password</a></li>
+                        <li><a href="#" onclick="getUserSettings()">Settings</a></li>
+                        <li><a href="https://inventisync.net/">Sign Out</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="https://inventisync.net/contact" class="contact-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="buttons">
+          <nav>
+              <button class="generic-button" id="ManageInventory" onclick="checkForms(); openForm()">Manage Inventory</button>
+              <button class="generic-button" id="Import"onclick="checkForms(); toggleImportForm()">Import</button></a> 
+              <button class="generic-button" id="Export"onclick="checkForms(); toggleExportForm()">Export</button></a> 
+              <button class="generic-button" id="Logs" onclick="log_redirect()">Logs</button></a>
+          </nav>
+      </div>
+      <div id="response-container" class="response-container"></div>
+      <div class = "container">
+          <div class="row">
+            <div class="col-lg-10 col=lg-offset-1">
+                <div class="row">
+                    <div class="col-lg1">
+                        <div id="output"></div>
+                        <table class="table" id="Inventory_table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Amount Type</th>
+                                    <th>Date Modified </th>
+                                    <th>Product ID</th>
+                                    <th>Product Cost</th>
+                                    <th>Company ID</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="import-container">
+        <div class="formPopup" id="updateForm">
+            <h2>Manage Inventory</h2>
+
+            <label>Product Name:</label>
+            <input type="text" id="product_name" class="text-input" placeholder="Product Name" required>
+
+            <label>Product Amount:</label>
+            <input type="text" id="prod_amount" class="text-input" placeholder="0" required>
+
+            <label for="amount_type">Amount Type:</label>
+            <select id="amount_type" class="text-input" required>
+                <option value="gal">Gallon</option>
+                <option value="mL">mL</option>
+            </select>
+
+            <label for="prod_ID">Product ID:</label>
+            <input type="text" id="prod_ID" class="text-input" placeholder="1000" pattern="\d{4}" title="Please enter exactly 4 digits" required>
+
+            <label for="prod_cost">Product Cost:</label>
+            <input type="text" id="prod_cost" class="text-input" placeholder="00.00" pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid float (up to 2 decimal places)" required>
+
+            <button type="submit" class="btn" onclick="add_row()">Update Inventory</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            <p id="row-add-msg-success" style="display: none; color: green;">Row Added Successfully!</p>
+            <p id="row-add-msg-fail" style="display: none; color: rgb(243, 5, 5);">Row Add Failed!</p>
+          </form>
+        </div>
+      </div>
+     <div class="import-container">
+      <div class="formPopup" id="importForm">
+        <label for="inpFile" class="file-label">Choose a CSV file:</label>
+        <input type="file" id="inpFile" name="filename" accept=".csv" onchange="displayFileName()">
+        <button class="btn" onclick="imprtFile()">Import</button>
+        <button class="btn cancel"  onclick="closeImport()">Close</button>
+        <p class="disclaimer">Please ensure that your CSV file contains the following columns in order: 
+          "product, amount, amount_type, last_modified, product_id, product_cost" and the respective data for each column. 
+          The product_id column CANNOT be "None". Each value in this column must be specified.
+        </p>
+        <p class="disclaimer" style="color: rgb(243, 5, 5);">Warning! Importing a CSV file will delete your current inventory table. If you wish to save what is in your current table, please export it and copy it into your new csv file BEFORE importing.</p>
+        <p id="loading-message" style="display: none; color: #c4a35a;">Loading. Please wait<span id="loading-dots"></span></p>
+        <p id="import-success-message" style="display: none; color: green;">Import successful!</p>
+      </div>
+    </div>
+      <div class="import-container">
+        <div class="formPopup" id="exportForm">
+            <h2>Export Inventory</h2>
+            <button class="btn" onclick="exprtFile()">Download File</button>
+            <button class ="btn" onclick="openExprt_email(); closeExprt()">Send File by Email</button>
+            <button class="btn cancel" onclick="closeExprt()">Close</button>
+            <p id="exprted-msg-success" style="display: none; color: green;">File Exported Successfully!</p>
+            <p id="exprted-msg-fail" style="display: none; color: rgb(243, 5, 5);">File Export Failed!</p>
+          </form>
+        </div>
+      </div>
+      <div class="import-container">
+        <div class="formPopup" id="exprt_email">
+              <input type="text" id="user_email" name="filename" placeholder="JohnDoe123@domainhere">
+              <button class="btn" id="sub_btn", onclick="exprtByEmail()">Send</button>
+              <button class="btn cancel" id="cancel_btn", onclick="closeExprt_email()">Close</button>
+              <p id="exprted-msg-success-inv" style="display: none; color: green;">File Exported Successfully!</p>
+              <p id="exprted-msg-fail-inv" style="display: none; color: rgb(243, 5, 5);">File Export Failed!</p>
+        </div>
+      </div>
+    </body>
+</body>
+<div class="popup" id="settingsPopup">
+  <h2>Settings</h2>
+  <label for="itemAmountThreshold">Item Amount Threshold:</label>
+  <input type="number" id="itemAmountThreshold" name="itemAmountThreshold" class="text-input" placeholder="Enter item amount threshold"  value="" required>
+  <label for="automaticNotifications">
+    <input type="checkbox" id="automaticNotifications" name="automaticNotifications">
+   Notifications
+  </label>
+  <button type="button" class="btn" onclick="updateUserSettings()">Save</button>
+  <button type="button" class="btn cancel" onclick="closeSettings()">Close</button>
+
+  <p id="settings-update-success-msg" style="display: none; color: green;">Settings Updated Successfully!</p>
+  <p id="settings-update-fail-msg" style="display: none; color: rgb(243, 5, 5);">Settings Update Failed!</p>
+</div>
+
+<div class="popup" id="confirmPopup">
+  <h2>Delete Row?</h2>
+  <button type="button" class="btn" id="del_button_confirm">Yes</button>
+  <button type="button" class="btn cancel" id="cancel_button_confirm">No</button>
+</div>
+
+
+    </html>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"  src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"  src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/src/Main_js.js"></script>
+</main>

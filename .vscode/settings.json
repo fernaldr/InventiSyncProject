@@ -1,0 +1,14 @@
+{
+    "rainbowTags.supportedLanguages": [
+        "html",
+        "php",
+        "twig",
+        "blade",
+        "smarty",
+        "xml",
+        "vue",
+        "txt",
+        "py",
+        "lua"
+    ]
+}

@@ -1,0 +1,347 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 100%; /* Adjusted for wider screens */
+    margin: 0 auto;
+    /* padding: 10px; */
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.description {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.description h2 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.features, .benefits, .pricing, .testimonials {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.features ul, .benefits ul, .pricing ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li, .benefits li, .pricing li {
+    margin-bottom: 10px;
+}
+
+.testimonials {
+    padding: 40px;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.author {
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .nav-links li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+.company-name {
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: #007bff; /* Company's primary color */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Add letter spacing for a modern look */
+    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+    margin: 0 auto; /* Center the heading horizontally */
+    width: fit-content; /* Make the width fit the content */
+    padding: 8px 0; /* Add padding for spacing */
+}
+
+.input-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signup-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 93%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+.container{
+    padding: 3px;
+}
+ /* Apply basic styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    }
+
+    /* Style the table header row */
+thead {
+    background-color: #f2f2f2;
+    }
+
+    /* Style the table headers */
+th {
+    text-align: left;
+    padding: 12px;
+    }
+
+    /* Style the table data rows */
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    }
+
+    /* Style alternate rows for better readability */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    }
+
+    /* Hover effect for table rows */
+tr:hover {
+    background-color: #e0e0e0;
+    }
+
+    /* Add spacing between cells */
+td, th {
+    padding-left: 16px;
+    padding-right: 16px;
+    }
+
+    /* Apply a border to the table */
+table {
+    border: 1px solid #ddd;
+    }
+
+    /* Optional: Add a shadow to the table for depth */
+table {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 6px;
+    }
+}
+.generic-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+.generic-button:hover {
+        background-color: #0056b3;
+    }
+.manageInventory {
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+.formPopup {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+    }
+.formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+.formContainer input[type=text],
+.formContainer input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+    }
+.formContainer input[type=text]:focus,
+.formContainer input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+.formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+.formContainer .cancel {
+        background-color: #cc0000;
+    }
+.title {
+        margin-bottom: 20px;
+        width: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        align-items: center;
+    }
+.login-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+.login-button:hover {
+        background-color: #0056b3;
+    }
+input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+h1 {
+        color: #333;
+        text-align: center;
+    }
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none; /* Initially hide the error message */
+}

@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/FlaskTemplate/Main" }
+  ],
+  "installCommand": "npm install jquery"
+}

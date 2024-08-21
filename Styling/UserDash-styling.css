@@ -1,0 +1,389 @@
+/*Styling for header of user dashboard*/
+.response-container {
+    /* position: fixed; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Background color */
+    border: 1px solid #000; /* Border style */
+    padding: 10px; /* Padding around content */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    display: none; /* Initially hidden */
+}
+  
+/* Styling for the success message */
+.response-container.success {
+    background-color: #4CAF50; /* Green background for success message */
+    color: #fff; /* White text for success message */
+}
+
+.company-name {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: #c4a35a; /* Company's primary color */
+  text-transform: uppercase; /* Convert text to uppercase */
+  letter-spacing: 2px; /* Add letter spacing for a modern look */
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+  margin: auto; /* Center the heading horizontally */
+  width: fit-content; /* Make the width fit the content */
+  padding: 10px 0; /* Add padding for spacing */
+  text-align: center;
+  /* margin-left: 10px; */
+}
+
+.profile-button {
+  margin-right: 20px; /* Add space between "Your Profile" and "Contact Us" */
+  cursor: pointer;
+  font-weight: bold; /* Make the button text bold */
+  position: relative;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.profile-menu {
+  display: none;
+  position: absolute;
+  top: 13; /* Position the menu just below the button */
+  right: 15;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  z-index: 1;
+  min-width: 150px; /* Set a minimum width for the menu */
+  max-width: 200px; /* Set a maximum width for the menu */
+}
+
+.profile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-menu li {
+  padding: 10px;
+}
+
+.profile-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.profile-menu a:hover {
+  background-color: #f4f4f4;
+}
+
+.show {
+  display: block;
+}
+
+/* Apply basic styles to the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  }
+
+  /* Style the table header row */
+thead {
+  background-color: #f2f2f2;
+  }
+
+  /* Style the table headers */
+th {
+  text-align: left;
+  padding: 12px;
+  }
+
+  /* Style the table data rows */
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  }
+
+  /* Style alternate rows for better readability */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  }
+
+  /* Hover effect for table rows */
+tr:hover {
+  background-color: #e0e0e0;
+  }
+
+  /* Add spacing between cells */
+td, th {
+  padding-left: 16px;
+  padding-right: 16px;
+  }
+
+  /* Apply a border to the table */
+table {
+  border: 1px solid #ddd;
+  }
+
+  /* Optional: Add a shadow to the table for depth */
+table {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  table {
+      font-size: 14px;
+  }
+  th, td {
+      padding: 6px;
+  }
+}
+.generic-button {
+    background-color: #c4a35a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+.generic-button:hover {
+      background-color: #c4a35b;
+  }
+
+.manageInventory {
+      position: relative;
+      text-align: center;
+      width: 100%;
+  }
+.formPopup {
+      display: none;
+      position: fixed;
+      left: 50%;
+      top: 5%;
+      transform: translate(-50%, 5%);
+      border: 3px solid #999999;
+      z-index: 9;
+  }
+/* Style for the selected row */
+tr.selected {
+  background-color: lightblue; /* You can adjust the color as desired */
+}
+
+/* Style for the input fields in the selected row */
+tr.selected input[type="text"] {
+  background-color: rgb(253, 253, 248); /* Adjust the background color as desired */
+  border: 1px solid #ccc; /* Adjust the border properties as needed */
+  padding: 5px;
+  margin: 2px;
+}
+button.save-button {
+  background-color: #c4a35a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* Style for the Cancel button */
+button.cancel-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+/* Style for the Cancel button */
+button.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Styling for the file input container */
+.file-label {
+font-size: 16px;
+margin-right: 10px;
+cursor: pointer; /* Make the label clickable */
+}
+
+#inpFile {
+display: none; /* Hide the input element */
+}
+
+/* Style the file upload container */
+.import {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.import-container {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.formPopup {
+  border-radius: 8px;
+  display: none /* Hide the container by default */;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  #1f1f1f;
+  padding: 20px;
+  border: 1px solid #c4a35a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  color: #c4a35b;
+  text-align: center;
+}
+.formPopup select {
+  color: #c4a35a;
+  background-color: black;
+  border: 1px solid #c4a35a
+}
+.option:hover {
+  background-color: #1f1f1f;
+}
+/* Style the buttons */
+.btn {
+    background-color: #c4a35a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit {
+  background-color: #007BFF;
+}
+
+.cancel {
+  background-color: #DC3545;
+}
+
+/* Style the disclaimer message */
+.disclaimer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #999;
+}
+/* Add animation for the label */
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.file-label {
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: 5px; /* Adjust the left margin to align with the left edge of the "Import" button */
+  cursor: pointer;
+  animation: flash 1s infinite;
+  align-items: center;
+}
+
+
+/* Data table styles */
+/* Change the color of the DataTable info text */
+.dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter,
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_processing,
+  .dataTables_wrapper .dataTables_paginate {
+    color:#c4a35a !important;
+  }
+/* Change the styles of the "Search" text */
+.dataTables_filter label {
+  color: #c4a35a !important;/* Text color */
+  font-weight: bold; /* Make the text bold if desired */
+}
+/* Change the color of the "Previous" and "Next" buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color:#c4a35a !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color:#c4a35a !important;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1f1f1f;
+  padding: 20px;
+  border: 1px solid #c4a35a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  text-align: center;
+  color: #c4a35a;
+}
+
+.popup h2 {
+  margin-top: 0;
+  background-color: #1f1f1f;
+
+}
+
+.popup label {
+  display: block;
+}
+
+.popup input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  margin: 5px;
+}
+
+.chart-container {
+  margin: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #1f1f1f;
+  max-width: 100%; 
+  box-sizing: border-box;
+}
+@keyframes dots {
+  0%, 20% {
+    content: ".";
+  }
+  40%, 60% {
+    content: "..";
+  }
+  80%, 100% {
+    content: "...";
+  }
+}
+
+#loading-dots::after {
+  display: inline-block;
+  animation: dots 1.5s infinite steps(1);
+  content: "...";
+}

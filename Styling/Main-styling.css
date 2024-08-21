@@ -1,0 +1,306 @@
+/* General Styles */
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-image: linear-gradient(to bottom, black,#1f1f1f );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(45deg, #1f1f1f 25%, transparent 25%) 0 0,
+                linear-gradient(45deg, black 25%, transparent 25%) 0 50%,
+                linear-gradient(45deg, #1f1f1f 25%, transparent 25%) 50% 0,
+                linear-gradient(45deg, black 25%, transparent 25%) 50% 50%;
+    background-color: black;
+    color: #c4a35a;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative; /* Keep the original position */
+    transition: transform 0.3s ease; /* Add a transition for smoother movement */
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 100; /* Ensure the header is above other content */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    margin-right: 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align items in the center */
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c4a35a;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 100%; /* Adjusted for wider screens */
+    margin: 0 auto;
+    /* padding: 10px; */
+    background-image: linear-gradient(to bottom, black,#1f1f1f ) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+h {
+    color: #c4a35a;
+}
+
+.description {
+    text-align: center;
+    padding: 20px 0;
+}
+.description {
+    text-align: center ;
+    color: #e5e5dc;
+}
+.description h2 {
+    font-size: 2rem;
+    color: #c4a35a;
+}
+
+h2 {
+    color: #c4a35a;
+}
+
+.features, .benefits, .pricing, .testimonials {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1F1F1F;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #e5e5dc;
+}
+
+.features ul, .benefits ul, .pricing ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li, .benefits li, .pricing li {
+    margin-bottom: 10px;
+}
+
+.testimonials {
+    padding: 40px;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #c4a35a;
+    background-color: black;
+    color: #c4a35a;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.author {
+    font-weight: bold;
+    color: #e5e5dc;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .nav-links li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.input-container {
+    background-color: #1F1F1F;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    color: #c4a35a;
+}
+
+.signup-button {
+    background-color: #c4a35a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signup-button:hover {
+    background-color: #c4a35b;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 93%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+p {
+    margin-top: 20px;
+    text-align: center;
+    color: #e5e5dc;
+}
+
+a {
+    color: #c4a35a;
+    text-decoration: none;
+}
+.container{
+    padding: 3px;
+}
+ 
+.formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+.formContainer input[type=text],
+.formContainer input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+    }
+.formContainer input[type=text]:focus,
+.formContainer input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+.formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+.formContainer .cancel {
+        background-color: #cc0000;
+    }
+.title {
+        margin-bottom: 20px;
+        width: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        align-items: center;
+    }
+.login-button {
+        background-color: #c4a35a;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+.login-button:hover {
+        background-color: #c5a35b;
+    }
+input[type="submit"] {
+        background-color: #c4a35b;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+input[type="submit"]:hover {
+        background-color: #c4a35b;
+    }
+h1 {
+        color: #e5e5dc;
+        text-align: center;
+        border:black ;
+        border-width: 3px;
+    }
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none; /* Initially hide the error message */
+}
+.sub_btn {
+    background-color: #c4a35a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center; 
+}
+
+.cancel_btn {
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}

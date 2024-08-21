@@ -1,0 +1,7 @@
+{
+    "type": "module",
+
+    "main": "./Main_js.js",
+
+    "exports": "./jquery-3.7.1.min.js"
+} 
