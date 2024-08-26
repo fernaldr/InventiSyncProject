@@ -1,5 +1,5 @@
 # InventiSync Project
-[inventisync.](https://inventisync.net/)
+[InventiSync Website](https://inventisync.net/)
 ```diff
 
 - Hours spent on frontend
